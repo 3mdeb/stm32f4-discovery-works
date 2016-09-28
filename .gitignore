@@ -1,1 +1,3 @@
-main.elf main.hex main.bin
+*.elf
+*.hex
+*.bin
