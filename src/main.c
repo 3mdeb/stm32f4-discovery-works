@@ -77,12 +77,12 @@ int main(void)
 
 
 
-// make sure Port D pin 4 is configured as input
+// make sure Port A pin 0 is configured as input
 // RCC->AHB1ENR |= (1 << 3);
-// set port D pin 4 as EXTI4 interrupt source
+// set port A pin 0 (user button) as EXTI4 interrupt source
     GPIOA->OSPEEDR |= (0x03 << (2 * 0));    // high speed
     RCC->APB2ENR |= (1 << 14);              // SYSCFG clock enable
-    SYSCFG->EXTICR[1] |= 0x00;              // EXTI4 set to Port D
+    SYSCFG->EXTICR[1] |= 0x00;              // EXTI0 set to Port 0
     EXTI->IMR |= (1 << 0);                  // unmask EXTI0 interrupt
     EXTI->RTSR |= (1 << 0);                 // rising edge
 
